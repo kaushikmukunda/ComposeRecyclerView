@@ -4,10 +4,12 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.*
-import androidx.compose.ui.platform.setContent
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.AbstractComposeView
 import androidx.recyclerview.widget.RecyclerView
 import com.km.nestedrvcompose.ScreenContent
 
@@ -35,15 +37,15 @@ class ChildAdapter : RecyclerView.Adapter<ChildAdapter.ViewHolder>() {
     }
 }
 
-class ItemView(context: Context, attrs: AttributeSet? = null) : FrameLayout(context, attrs) {
+
+class ItemView(context: Context, attrs: AttributeSet? = null) : AbstractComposeView(context) {
 
     var title by mutableStateOf("")
 
-    init {
-        setContent(Recomposer.current()) {
-            MaterialTheme {
-                ScreenContent(title)
-            }
+    @Composable
+    override fun Content() {
+        MaterialTheme {
+            ScreenContent(title)
         }
     }
 }

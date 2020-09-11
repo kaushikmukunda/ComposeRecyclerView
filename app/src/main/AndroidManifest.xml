@@ -21,6 +21,8 @@
     <activity android:name=".HorizontalScrollActivity"/>
     <activity android:name=".VerticalScrollActivity"/>
     <activity android:name=".NestedScrollActivity"/>
+    <activity android:name=".VerticalScrollViewActivity"/>
+    <activity android:name=".HorizontalScrollActivity"/>
 
   </application>
 

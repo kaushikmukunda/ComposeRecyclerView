@@ -32,7 +32,7 @@ private sealed class ViewState(
     val buttonText: String
 )
 
-private class Init(title: String) : ViewState(title, "Cool dev", "Start")
+private class Init(title: String) : ViewState(title, "Init", "Start")
 private class Progress(title: String) : ViewState(title, "In Progress...", "Cancel")
 
 @Composable
